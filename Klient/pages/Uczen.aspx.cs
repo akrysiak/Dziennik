@@ -1,0 +1,23 @@
+﻿using ServiceReference1;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class pages_Uczen : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Service1Client sc = new Service1Client();
+        GridView1.DataSource = sc.WyswietlUczniow();
+        GridView1.DataBind();
+        sc.Close();
+    }
+
+    protected void btnDodaj_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/pages/DodajUczen.aspx");
+    }
+}

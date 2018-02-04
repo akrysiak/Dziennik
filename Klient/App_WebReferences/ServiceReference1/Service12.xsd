@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TNauczyciel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nauczyciel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TNauczyciel" nillable="true" type="tns:TNauczyciel" />
+  <xs:complexType name="ArrayOfTNauczyciel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TNauczyciel" nillable="true" type="tns:TNauczyciel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTNauczyciel" nillable="true" type="tns:ArrayOfTNauczyciel" />
+  <xs:complexType name="TUczen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataUrodzenia" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdKlasy" type="xs:int" />
+      <xs:element minOccurs="0" name="Imie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kontakt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Miejscowosc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nazwisko" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TUczen" nillable="true" type="tns:TUczen" />
+  <xs:complexType name="ArrayOfTUczen">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TUczen" nillable="true" type="tns:TUczen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTUczen" nillable="true" type="tns:ArrayOfTUczen" />
+  <xs:complexType name="TPrzedmiot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdNauczyciela" type="xs:int" />
+      <xs:element minOccurs="0" name="Nazwa" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TPrzedmiot" nillable="true" type="tns:TPrzedmiot" />
+  <xs:complexType name="ArrayOfTPrzedmiot">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TPrzedmiot" nillable="true" type="tns:TPrzedmiot" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTPrzedmiot" nillable="true" type="tns:ArrayOfTPrzedmiot" />
+  <xs:complexType name="TKlasa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Wychowawcy" type="xs:int" />
+      <xs:element minOccurs="0" name="Nazwa" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TKlasa" nillable="true" type="tns:TKlasa" />
+  <xs:complexType name="ArrayOfTKlasa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TKlasa" nillable="true" type="tns:TKlasa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTKlasa" nillable="true" type="tns:ArrayOfTKlasa" />
+  <xs:complexType name="TOcena">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdKlasy" type="xs:int" />
+      <xs:element minOccurs="0" name="IdNauczyciela" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPrzedmiot" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUcznia" type="xs:int" />
+      <xs:element minOccurs="0" name="Ocena" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TOcena" nillable="true" type="tns:TOcena" />
+  <xs:complexType name="ArrayOfTOcena">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TOcena" nillable="true" type="tns:TOcena" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTOcena" nillable="true" type="tns:ArrayOfTOcena" />
+  <xs:complexType name="ArrayOfPrzedmiotOceny">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrzedmiotOceny" nillable="true" type="tns:PrzedmiotOceny" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrzedmiotOceny" nillable="true" type="tns:ArrayOfPrzedmiotOceny" />
+  <xs:complexType name="PrzedmiotOceny">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="iID" type="xs:int" />
+      <xs:element minOccurs="0" name="iUID" type="xs:int" />
+      <xs:element minOccurs="0" name="sOceny" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sPrzedmiot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sUczen" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrzedmiotOceny" nillable="true" type="tns:PrzedmiotOceny" />
+</xs:schema>
