@@ -68,6 +68,7 @@ namespace WcfService1
                              select n).First();
             zapytanie.Imie = tu.Imie;
             zapytanie.Nazwisko = tu.Nazwisko;
+            zapytanie.DataUrodzenia = tu.DataUrodzenia;
             zapytanie.Ulica = tu.Ulica;
             zapytanie.Kod = tu.Kod;
             zapytanie.Kontakt = tu.Kontakt;
